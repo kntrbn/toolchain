@@ -36,10 +36,14 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - build:
-          context: 
-          - dev
+      - sam/deploy:
+          context: dev
           template: ./toolchain_lambda/template.yml
+
+      # - build:
+      #     context: 
+      #     - dev
+      #     template: ./toolchain_lambda/template.yml
       - say-hello:
           context: 
           - dev
