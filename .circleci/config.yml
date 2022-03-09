@@ -36,5 +36,6 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - build
+      - build:
+        - context: dev
       - say-hello
