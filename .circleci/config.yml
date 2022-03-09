@@ -2,18 +2,9 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-<<<<<<< HEAD
 orbs: 
   aws-sam-serverless: circleci/aws-sam-serverless@3.2.0
 
-=======
-
-orbs: 
-  aws-sam-serverless: circleci/aws-sam-serverless@3.2.0
-
-
-  
->>>>>>> 345f53fe533af7f21fc21adc6b37d80645d47945
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -28,24 +19,9 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-<<<<<<< HEAD
           command: | 
             echo "Hello, World!"
             ls -la
-=======
-          command: "echo Helloooooooooooooo, World!"
-  say-goodby:
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say goodby"
-          command: "echo Goodby"
-
->>>>>>> 345f53fe533af7f21fc21adc6b37d80645d47945
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
