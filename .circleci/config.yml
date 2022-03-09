@@ -38,6 +38,7 @@ workflows:
     jobs:
       - sam/deploy:
           context: dev
+          stack-name: staging-stack
           template: ./toolchain_lambda/template.yml
       - say-hello:
           context: 
