@@ -39,6 +39,6 @@ workflows:
       - build:
         - context: 
           - dev
-      - say-hello
+      - say-hello:
         - context: 
           - dev
