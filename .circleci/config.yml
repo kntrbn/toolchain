@@ -4,7 +4,7 @@ version: 2.1
 
 orbs: 
   sam: circleci/aws-sam-serverless@3.2.0
-  trigger-tests: mabl/trigger-tests@1.0.8
+  mabl: mabl/trigger-tests@1.0.8
 
 
 # Define a job to be invoked later in a workflow.
@@ -13,7 +13,7 @@ jobs:
   E2Etest:
     machine: true
     steps:
-      - mabl-trigger-tests/run-tests:
+      - mabl/run-tests:
           api-key: MABL_API_KEY
           application-id: o3HCI0VFVwmTjS1fJ5IX2A-a
           environment-id: bAZqzCIFqK0NbRZONMMrgQ-e
