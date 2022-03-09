@@ -39,11 +39,6 @@ workflows:
       - sam/deploy:
           context: dev
           template: ./toolchain_lambda/template.yml
-
-      # - build:
-      #     context: 
-      #     - dev
-      #     template: ./toolchain_lambda/template.yml
       - say-hello:
           context: 
           - dev
