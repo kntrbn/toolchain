@@ -49,7 +49,11 @@ workflows:
   say-hello-workflow:
     jobs:
       - sam/deploy:
+          name: samdeploy_getMessage
           context: dev
           stack-name: staging-stack
           template: ./toolchain_lambda/template.yaml
           s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf
+      - E2Etest:
+          requires:
+            - samdeploy_getMessage
