@@ -39,7 +39,7 @@ workflows:
       - sam/deploy:
           context: dev
           stack-name: staging-stack
-          template: ./toolchain_lambda/template.yml
+          template: ./toolchain_lambda/template.yaml
       - say-hello:
           context: 
           - dev
