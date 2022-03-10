@@ -45,7 +45,7 @@ jobs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 
 workflows:
-  say-hello-workflow:
+  Release:
     jobs:
       - sam/deploy:
           name: Deploy_dev
