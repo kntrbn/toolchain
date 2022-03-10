@@ -6,11 +6,11 @@ orbs:
   sam: circleci/aws-sam-serverless@3.2.0
   mabl: mabl/trigger-tests@1.0.8
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   E2Etest:
-    machine: true
+    docker:
+      - image: cimg/base:stable
+    # machine: true
     steps:
       - mabl/run-tests:
           api-key: MABL_API_KEY
