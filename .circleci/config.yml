@@ -41,9 +41,6 @@ jobs:
   #           echo "Hello, World!!"
   #           ls -la
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-
 workflows:
   Release:
     jobs:
