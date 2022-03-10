@@ -55,12 +55,14 @@ workflows:
           s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf
       - E2Etest:
           context: dev
-          requires: Deploy_dev
+          requires: 
+            - Deploy_dev
 
       - sam/deploy:
           name: Deploy_prod
           context: dev
-          requires: E2Etest
+          requires: 
+            - E2Etest
           stack-name: stack_prod
           template: ./toolchain_lambda/template.yaml
           s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf
