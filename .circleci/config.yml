@@ -47,7 +47,7 @@ workflows:
           context: dev
           stack-name: stack-dev
           template: ./toolchain_lambda/template.yaml
-          s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf/toolchain/dev/
+          s3-bucket: toolchain-artifacts
           # s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf
       - E2Etest:
           context: dev
@@ -60,5 +60,5 @@ workflows:
             - E2Etest
           stack-name: stack-prod
           template: ./toolchain_lambda/template.yaml
-          s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf/toolchain/prod/
+          s3-bucket: toolchain-artifacts
           # s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf
