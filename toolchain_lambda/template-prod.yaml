@@ -30,7 +30,7 @@ Resources:
         Enabled: true
         Type: Canary10Percent5Minutes
         Alarms:
-         - arn:aws:cloudwatch:us-west-1:660266376704:alarm:toolchain-api-latency-over500ms
+          - arn:aws:cloudwatch:us-west-1:660266376704:alarm:toolchain-api-latency-over500ms
         #  - !Ref CanaryErrorsAlarm
         #  - !Ref toolchain-api-latency-over500ms
 
