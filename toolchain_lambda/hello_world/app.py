@@ -1,4 +1,5 @@
-import json, time
+import json
+# import json, time
 
 # import requests
 
@@ -33,7 +34,7 @@ def lambda_handler(event, context):
 
     #     raise e
 
-    time.sleep(1)
+    # time.sleep(1)
 
     return {
         "statusCode": 200,
