@@ -28,7 +28,11 @@ Resources:
       AutoPublishAlias: dev
       DeploymentPreference:
         Enabled: true
-        Type: Linear10PercentEvery1Minute
+        Type: Canary10Percent10Minutes
+        # Type: Linear10PercentEvery1Minute
+        Alarms:
+         # A list of alarms that you want to monitor
+         - !Ref toolchain-api-latency-over500ms
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
