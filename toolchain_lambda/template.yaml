@@ -25,6 +25,7 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+      AutoPublishAlias: dev
       DeploymentPreference:
         Enabled: true
         Type: Linear10PercentEvery1Minute
