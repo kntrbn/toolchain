@@ -46,7 +46,7 @@ workflows:
           name: Deploy_dev
           context: dev
           stack-name: stack-dev
-          template: ./toolchain_lambda/template.yaml
+          template: ./toolchain_lambda/template_dev.yaml
           s3-bucket: toolchain-artifacts
           # s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf
       - E2Etest:
@@ -59,6 +59,6 @@ workflows:
           requires: 
             - E2Etest
           stack-name: stack-prod
-          template: ./toolchain_lambda/template.yaml
+          template: ./toolchain_lambda/template_prod.yaml
           s3-bucket: toolchain-artifacts
           # s3-bucket: aws-sam-cli-managed-default-samclisourcebucket-1iovfc7272jgf
