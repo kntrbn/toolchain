@@ -31,8 +31,8 @@ Resources:
         Type: Canary10Percent10Minutes
         # Type: Linear10PercentEvery1Minute
         Alarms:
-         # A list of alarms that you want to monitor
-         - !Ref toolchain-api-latency-over500ms
+         - arn:aws:cloudwatch:us-west-1:660266376704:alarm:toolchain-api-latency-over500ms
+        #  - !Ref toolchain-api-latency-over500ms
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
