@@ -28,7 +28,7 @@ Resources:
       AutoPublishAlias: dev
       DeploymentPreference:
         Enabled: true
-        Type: Canary10Percent10Minutes
+        Type: Canary10Percent1Minutes
         # Type: Linear10PercentEvery1Minute
         Alarms:
          - arn:aws:cloudwatch:us-west-1:660266376704:alarm:toolchain-api-latency-over500ms
