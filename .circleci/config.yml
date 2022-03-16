@@ -7,37 +7,15 @@ orbs:
   mabl: mabl/trigger-tests@1.0.8
 
 jobs:
-  E2Etest:
-    docker:
-      - image: cimg/base:stable
-    # machine: true
-    steps:
-      - mabl/run-tests:
-          api-key: MABL_API_KEY
-          application-id: o3HCI0VFVwmTjS1fJ5IX2A-a
-          environment-id: bAZqzCIFqK0NbRZONMMrgQ-e
-    # docker:
-    #   - image: cimg/base:stable
-  # build:
-    # docker:
-    #   - image: cimg/base:stable
-    # steps:
-    #   - checkout
-    #   - sam/install
-    #   - run: sam build
-
-  # say-hello:
-  #   # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-  #   # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+  # E2Etest:
   #   docker:
   #     - image: cimg/base:stable
   #   steps:
-  #     - checkout
-  #     - run:
-  #         name: "Say hello"
-  #         command: | 
-  #           echo "Hello, World!!"
-  #           ls -la
+  #     - mabl/run-tests:
+  #         api-key: MABL_API_KEY
+  #         application-id: o3HCI0VFVwmTjS1fJ5IX2A-a
+  #         environment-id: bAZqzCIFqK0NbRZONMMrgQ-e
+
 
 workflows:
   Release:
