@@ -46,10 +46,10 @@ Resources:
       Statistic: Maximum
       Threshold: 500
       Dimensions:
-        # - Name: Resource
-        #   Value: !Sub "${HelloWorldFunction}:live"
         - Name: FunctionName
           Value: !Ref HelloWorldFunction
+        # - Name: Resource
+        #   Value: !Sub "${HelloWorldFunction}:live"
         # - Name: ExecutedVersion
         #   Value: !GetAtt HelloWorldFunction.Version.Version
 

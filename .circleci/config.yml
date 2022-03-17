@@ -20,21 +20,21 @@ jobs:
 workflows:
   Release:
     jobs:
-      # - sam/deploy:
-      #     name: Deploy_dev
-      #     context: dev
-      #     stack-name: stack-dev
-      #     template: ./toolchain_lambda/template-dev.yaml
-      #     s3-bucket: toolchain-artifacts
-      # - E2Etest:
-      #     context: dev
-      #     requires: 
-      #       - Deploy_dev
+      - sam/deploy:
+          name: Deploy_dev
+          context: dev
+          stack-name: stack-dev
+          template: ./toolchain_lambda/template-dev.yaml
+          s3-bucket: toolchain-artifacts
+      - E2Etest:
+          context: dev
+          requires: 
+            - Deploy_dev
       - sam/deploy:
           name: Deploy_prod
           context: dev
-          # requires: 
-          #   - E2Etest
+          requires: 
+            - E2Etest
           stack-name: stack-prod
           template: ./toolchain_lambda/template-prod.yaml
           s3-bucket: toolchain-artifacts
