@@ -30,28 +30,28 @@ Resources:
         Enabled: true
         Type: Canary10Percent5Minutes
         Alarms:
-          - arn:aws:cloudwatch:us-west-1:660266376704:alarm:toolchain-api-latency-over500ms
-        #  - !Ref CanaryErrorsAlarm
+          # - arn:aws:cloudwatch:us-west-1:660266376704:alarm:toolchain-api-latency-over500ms
+          - !Ref CanaryErrorsAlarm
         #  - !Ref toolchain-api-latency-over500ms
 
-  # CanaryErrorsAlarm:
-  #   Type: AWS::CloudWatch::Alarm
-  #   Properties:
-  #     AlarmDescription: Lambda function canary errors
-  #     ComparisonOperator: GreaterThanThreshold
-  #     EvaluationPeriods: 2
-  #     MetricName: Duration
-  #     Namespace: AWS/Lambda
-  #     Period: 60
-  #     Statistic: Maximum
-  #     Threshold: 500
-      # Dimensions:
-      #   - Name: Resource
-      #     Value: !Sub "${HelloWorldFunction}:live"
-      #   - Name: FunctionName
-      #     Value: !Ref HelloWorldFunction
-      #   - Name: ExecutedVersion
-      #     Value: !GetAtt HelloWorldFunction.Version.Version
+  CanaryErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: Lambda function canary errors
+      ComparisonOperator: GreaterThanThreshold
+      EvaluationPeriods: 2
+      MetricName: Duration
+      Namespace: AWS/Lambda
+      Period: 60
+      Statistic: Maximum
+      Threshold: 500
+      Dimensions:
+        # - Name: Resource
+        #   Value: !Sub "${HelloWorldFunction}:live"
+        - Name: FunctionName
+          Value: !Ref HelloWorldFunction
+        # - Name: ExecutedVersion
+        #   Value: !GetAtt HelloWorldFunction.Version.Version
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
