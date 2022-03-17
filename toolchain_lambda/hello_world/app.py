@@ -34,12 +34,12 @@ def lambda_handler(event, context):
 
     #     raise e
 
-    # time.sleep(1)
+    time.sleep(1)
 
     return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": "Hello world, Ken Tairabune",
+            "message": "Hello world, Ken Tairabune     --- SLOW ---",
             # "location": ip.text.replace("\n", "")
         }),
     }
