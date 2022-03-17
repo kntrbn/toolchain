@@ -39,7 +39,7 @@ Resources:
     Properties:
       AlarmDescription: Lambda function canary errors
       ComparisonOperator: GreaterThanThreshold
-      EvaluationPeriods: 2
+      EvaluationPeriods: 1
       MetricName: Duration
       Namespace: AWS/Lambda
       Period: 60
