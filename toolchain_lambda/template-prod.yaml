@@ -30,9 +30,7 @@ Resources:
         Enabled: true
         Type: Canary10Percent5Minutes
         Alarms:
-          # - arn:aws:cloudwatch:us-west-1:660266376704:alarm:toolchain-api-latency-over500ms
           - !Ref CanaryErrorsAlarm
-        #  - !Ref toolchain-api-latency-over500ms
 
   CanaryErrorsAlarm:
     Type: AWS::CloudWatch::Alarm
@@ -48,10 +46,6 @@ Resources:
       Dimensions:
         - Name: FunctionName
           Value: !Ref HelloWorldFunction
-        # - Name: Resource
-        #   Value: !Sub "${HelloWorldFunction}:live"
-        # - Name: ExecutedVersion
-        #   Value: !GetAtt HelloWorldFunction.Version.Version
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
